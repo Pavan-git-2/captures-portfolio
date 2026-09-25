@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Admin Dashboard — Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+
+<div class="container">
+  <div class="dash-header">
+    <div style="display:flex; align-items:center; gap:14px;">
+      <a href="index.html" class="site-title logo">
+        <img src="assets/img/logo.png" alt="Captures — By Creative Think" class="logo-img" />
+      </a>
+      <span style="color: var(--ink-dim); font-size: 13px;">— Admin</span>
+    </div>
+    <div style="display:flex; align-items:center; gap:16px;">
+      <span id="admin-email" style="color: var(--ink-dim); font-size: 13px;"></span>
+      <button class="icon-btn" onclick="logout()">Log out</button>
+      <a href="index.html" class="icon-btn" style="text-decoration:none;">View site</a>
+    </div>
+  </div>
+
+  <div class="dash-layout">
+    <div class="upload-panel">
+      <h2>Upload new work</h2>
+      <form id="upload-form">
+        <label for="file-input">File (image or video)</label>
+        <input type="file" id="file-input" accept="image/*,video/*" required />
+        <label for="category-input">Category</label>
+        <select id="category-input" required>
+          <option value="">Select category</option>
+          <option value="recent_works">Recent works</option>
+          <option value="social_media_reels">Social media reels</option>
+          <option value="ae_works">AE works</option>
+          <option value="pr_works">PR works</option>
+        </select>
+        <label for="title-input">Title</label>
+        <input type="text" id="title-input" placeholder="Untitled" />
+        <label for="desc-input">Description (optional)</label>
+        <textarea id="desc-input" rows="3"></textarea>
+        <div class="progress-bar" id="progress-bar"><div class="progress-bar-fill" id="progress-fill"></div></div>
+        <div class="form-msg" id="upload-msg"></div>
+        <button class="btn" type="submit" id="upload-submit">Upload</button>
+      </form>
+    </div>
+
+    <div>
+      <h2 style="font-family: var(--serif); font-weight:500; font-size:18px; margin-bottom:16px;">All uploads</h2>
+      <div class="admin-list" id="admin-list">
+        <div class="empty-state">Loading…</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+<script src="assets/supabase-client.js"></script>
+<script src="assets/dashboard.js"></script>
+</body>
+</html>

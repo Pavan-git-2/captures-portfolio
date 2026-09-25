@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+
+<header class="site-header container">
+  <a href="index.html" class="site-title logo">
+    <img src="assets/img/logo.png" alt="Captures — By Creative Think" class="logo-img" />
+  </a>
+  <nav class="site-nav">
+    <a href="index.html">Work</a>
+    <a href="#contact">Contact</a>
+    <a href="login.html">Admin</a>
+  </nav>
+</header>
+
+<section class="hero" id="hero">
+  <video class="hero-video" autoplay muted loop playsinline preload="auto">
+    <source src="assets/video/hero-bg.mp4" type="video/mp4" />
+  </video>
+  <div class="hero-overlay"></div>
+  <div class="hero-inner container">
+    <h1>Annavaram Cinematics &amp; Edits</h1>
+    <p>From real moments to timeless reel magic, we transform your special memories into stories that live forever.</p>
+  </div>
+</section>
+
+<main class="container">
+  <div class="tabs">
+    <button class="tab-btn active" id="tab-recent_works" onclick="setFilter('recent_works')">Recent works</button>
+    <button class="tab-btn" id="tab-social_media_reels" onclick="setFilter('social_media_reels')">Social media reels</button>
+    <button class="tab-btn" id="tab-ae_works" onclick="setFilter('ae_works')">AE works</button>
+    <button class="tab-btn" id="tab-pr_works" onclick="setFilter('pr_works')">PR works</button>
+  </div>
+
+  <div class="grid" id="grid">
+    <div class="empty-state">Loading…</div>
+  </div>
+</main>
+
+<section class="contact-section container" id="contact">
+  <h2>Get in touch</h2>
+  <p>For bookings and enquiries, reach out on any of these.</p>
+  <div class="contact-links">
+    <a href="https://wa.me/919398499229" target="_blank" rel="noopener" class="contact-link">
+      <span class="contact-label">WhatsApp</span>
+      <span class="contact-value">+91 93984 99229</span>
+    </a>
+    <a href="https://instagram.com/annavaram.rajulapati_99" target="_blank" rel="noopener" class="contact-link">
+      <span class="contact-label">Instagram</span>
+      <span class="contact-value">@annavaram.rajulapati_99</span>
+    </a>
+    <a href="mailto:rajulapatiannavaram31@gmail.com" class="contact-link">
+      <span class="contact-label">Email</span>
+      <span class="contact-value">rajulapatiannavaram31@gmail.com</span>
+    </a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="logo">
+      <img src="assets/img/logo.png" alt="Captures — By Creative Think" class="logo-img footer-logo-img" />
+    </div>
+    <div class="footer-links">
+      <a href="https://wa.me/919398499229" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="https://instagram.com/annavaram.rajulapati_99" target="_blank" rel="noopener">Instagram</a>
+      <a href="mailto:rajulapatiannavaram31@gmail.com">Email</a>
+    </div>
+  </div>
+</footer>
+
+<div class="lightbox hidden" id="lightbox">
+  <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+  <div>
+    <div class="lightbox-content" id="lightbox-content"></div>
+    <div class="lightbox-caption" id="lightbox-caption"></div>
+  </div>
+</div>
+
+<script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+<script src="assets/supabase-client.js"></script>
+<script src="assets/gallery.js"></script>
+</body>
+</html>
